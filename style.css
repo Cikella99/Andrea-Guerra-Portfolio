@@ -152,42 +152,69 @@ p,
   border-color: #000000;
 }
 
+/* HEADER */
 .custom-navbar {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* nero 70% opacità */
   border-bottom: 2px solid #ffffff;
   height: 90px;
 }
+
 .custom-navbar .nav-link {
   color: #ffffff;
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   transition: transform 0.2s ease, color 0.2s ease;
 }
+
 .custom-navbar .nav-link:hover {
   transform: scale(1.05);
   color: #ffffff;
 }
+
 .custom-navbar .nav-link.active {
   color: #ffffff;
-  font-family: "Inter", sans-serif;
   font-weight: 200;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
+
 .custom-navbar .nav-link.active:hover {
   transform: scale(1.05);
   color: #ffffff;
 }
+
 .custom-navbar .navbar-toggler {
   border: none;
 }
+
 .custom-navbar .navbar-toggler:focus {
   box-shadow: none;
 }
-.custom-navbar .navbar-toggler .navbar-toggler-icon {
+
+.custom-navbar .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+/* Sfondo nero per il menu a tendina mobile */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #000; /* nero 100% */
+    width: 100%; /* occupa tutta la larghezza */
+    left: 0;
+    top: 90px; /* altezza della navbar */
+    position: absolute; /* così si "stacca" e copre tutto sotto */
+    padding: 1rem;
+    z-index: 999; /* sta sopra ai contenuti */
+  }
+  .custom-navbar .nav-link {
+    display: block;
+    padding: 0.75rem;
+    text-align: center; /* centri i link */
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
 footer {
   min-height: 100px;
   border-bottom: 2px solid #ffffff;
@@ -228,6 +255,11 @@ footer {
   outline: none;
 }
 
+@media (max-width: 767px) {
+  .footer-link {
+    font-size: 16px;
+  }
+}
 .section-gap-25 {
   margin-top: 25vh;
   margin-bottom: 25vh;

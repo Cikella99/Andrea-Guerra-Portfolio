@@ -142,49 +142,71 @@ p,
 }
 
 
-//HEADER
+/* HEADER */
 .custom-navbar {
-  background: rgba(0, 0, 0, 0.7); // nero 70% opacità
+  background: rgba(0, 0, 0, 0.7); /* nero 70% opacità */
   border-bottom: 2px solid #ffffff;
   height: 90px;
+}
 
-  .nav-link {
+.custom-navbar .nav-link {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.custom-navbar .nav-link.active {
+  color: #ffffff;
+  font-weight: 200;
+}
+
+.custom-navbar .nav-link.active:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.custom-navbar .navbar-toggler {
+  border: none;
+}
+
+.custom-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Sfondo nero per il menu a tendina mobile */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #000;       /* nero 100% */
+    width: 100%;            /* occupa tutta la larghezza */
+    left: 0;
+    top: 90px;              /* altezza della navbar */
+    position: absolute;     /* così si "stacca" e copre tutto sotto */
+    padding: 1rem;
+    z-index: 999;           /* sta sopra ai contenuti */
+  }
+
+  .custom-navbar .nav-link {
+    display: block;
+    padding: 0.75rem;
+    text-align: center;     /* centri i link */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 200;
-    transition: transform 0.2s ease, color 0.2s ease; // <-- qui definisci la transizione
-
-
-     &:hover {
-    transform: scale(1.05); // leggero grow
-    color: #ffffff;         // opzionale: puoi cambiare colore hover
-  }
-
-    &.active {
-      color: #ffffff; // resta bianca quando attiva
-      font-family: 'Inter', sans-serif;
-      font-weight: 200;
-      transition: transform 0.2s ease, color 0.2s ease; // <-- qui definisci la transizione
-
-
-       &:hover {
-      transform: scale(1.05); // leggero grow
-      color: #ffffff;         // opzionale: puoi cambiare colore hover
-  }
-    }
-  }
-
-  .navbar-toggler {
-    border: none; 
-    &:focus {
-      box-shadow: none;
-    }
-    .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
   }
 }
+
 //FOOTER
 footer {
   min-height: 100px;   // altezza minima
@@ -213,22 +235,29 @@ footer {
   }
 }
 
- //FOOTER LINK
-  .footer-link {
+// FOOTER LINK
+.footer-link {
   color: #ffffff;       // bianco
   font-family: 'Inter', sans-serif;
-  font-weight: 200; // Regular
-  font-size: 18px;
-  text-decoration: none; // niente sottolineatura
+  font-weight: 200;
+  font-size: 18px;      // default desktop
+  text-decoration: none;
   transition: transform 0.2s ease, color 0.2s ease;
 
   &:hover {
-    transform: scale(1.05); // leggero grow
-    color: #ffffff;         // opzionale: puoi cambiare colore hover
+    transform: scale(1.05);
+    color: #ffffff;
   }
 
   &:focus {
     outline: none;
+  }
+}
+
+// Mobile font-size
+@media (max-width: 767px) {
+  .footer-link {
+    font-size: 16px;
   }
 }
 
