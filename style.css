@@ -553,10 +553,14 @@ footer {
   padding: 0.75rem 1rem;
 }
 
+@media (max-width: 576px) {
+  .custom-input {
+    margin-bottom: 1rem; /* spazio extra su mobile tra i campi */
+  }
+}
 .custom-input::-moz-placeholder {
   color: #cccccc; /* solo se vuoi eventuale placeholder grigio */
 }
-
 .custom-input::placeholder {
   color: #cccccc; /* solo se vuoi eventuale placeholder grigio */
 }
