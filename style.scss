@@ -213,8 +213,39 @@ p,
 
 //FOOTER
 footer {
-  min-height: 100px;   // altezza minima
-    border-bottom: 2px solid #ffffff;
+  min-height: 100px;
+  border-bottom: 2px solid #fff;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .col-auto {
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 0.75rem;
+
+      &.d-flex {
+        justify-content: center !important;
+        gap: 15px;
+      }
+    }
+  }
+
+  .btn-footer {
+    @media (max-width: 767px) {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 
