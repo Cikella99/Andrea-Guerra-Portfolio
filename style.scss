@@ -605,3 +605,16 @@ footer {
   box-shadow: none;
 }
 
+.mobile-hint {
+  display: block; // così diventa a linea intera sotto l'immagine
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.3rem;
+  text-decoration: underline; // per far capire che è un link
+
+  @media (min-width: 768px) {
+    display: none; // solo mobile
+  }
+}
+

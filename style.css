@@ -599,4 +599,18 @@ footer .col-auto {
   color: #ffffff;
   border-color: #ffffff;
   box-shadow: none;
+}
+
+.mobile-hint {
+  display: block;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.3rem;
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .mobile-hint {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
