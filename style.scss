@@ -102,7 +102,7 @@ p,
   color: #ffffff;
   letter-spacing: 1px;
   margin-top: 0;
-  margin-bottom: 0.5rem; /* puoi regolare */
+  margin-bottom: 0.5rem; // avvicina titolo e lista
 
 
   @media (max-width: 992px) {
@@ -113,6 +113,22 @@ p,
     font-size: 16px;
   }
 }
+
+.container p {
+  line-height: 1.5; // più grande = più spazio tra le righe
+  margin-bottom: 1rem; // opzionale: spazio extra tra i paragrafi
+}
+
+//LINK BIANCHI
+.link-white {
+  color: white;
+  text-decoration: underline; /* opzionale se non vuoi il sottolineato */
+}
+
+.link-white:hover {
+  color: #ddd; /* così da mobile/desktop cambia un po’ al passaggio */
+}
+
 
 //BOTTONI
 .btn-custom {

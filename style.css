@@ -111,7 +111,7 @@ p,
   color: #ffffff;
   letter-spacing: 1px;
   margin-top: 0;
-  margin-bottom: 0.5rem; /* puoi regolare */
+  margin-bottom: 0.5rem;
 }
 @media (max-width: 992px) {
   .titolino {
@@ -122,6 +122,20 @@ p,
   .titolino {
     font-size: 16px;
   }
+}
+
+.container p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.link-white {
+  color: white;
+  text-decoration: underline; /* opzionale se non vuoi il sottolineato */
+}
+
+.link-white:hover {
+  color: #ddd; /* così da mobile/desktop cambia un po’ al passaggio */
 }
 
 .btn-custom {
