@@ -51,6 +51,7 @@ h3 {
   font-size: 35px;
   color: #A9A9A9;
   letter-spacing: 2px;
+  margin-bottom: 5rem; /* spazio sotto il titolo */
 }
 @media (max-width: 992px) {
   h3 {
@@ -311,41 +312,105 @@ footer {
   }
 }
 
-.project-card {
+.bottom-gap-25 {
+  margin-bottom: 25vh;
+}
+@media (max-width: 992px) {
+  .bottom-gap-25 {
+    margin-bottom: 20vh;
+  }
+}
+@media (max-width: 576px) {
+  .bottom-gap-25 {
+    margin-bottom: 10vh;
+  }
+}
+
+/* Contenitore link */
+.box-link {
   display: block;
-  width: 45vh;
-  height: 30vh;
+  border-radius: 30px;
   overflow: hidden;
-  border-radius: 30px;
   position: relative;
-  border: 2px solid transparent; /* già un bordo presente */
+  height: 25vh; /* altezza base desktop */
+}
+
+/* Immagini dentro il link */
+.box-link img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* riempie il contenitore senza deformarsi */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover per bordo */
+.box-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 30px;
   transition: border-color 0.3s ease;
-  /* per tutte le foto ma in realtà è per quella del mio sito" */
-  /* SOLO per la foto "Cocnierge" */
-  /* SOLO per la foto "Mamma" */
-  /* SOLO per la foto "gustoride" */
+  pointer-events: none;
 }
-.project-card img {
+
+.box-link:hover::after {
+  border-color: white;
+}
+
+/* SOLO per la foto "Cocnierge" */
+.concierge-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 60%;
-     object-position: 50% 60%; /* ancora più preciso */
-  border-radius: 30px;
-  transition: transform 0.3s ease;
-}
-.project-card .concierge-img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: cover; /* riempie il contenitore mantenendo proporzioni */
   -o-object-position: 1% 70%;
-     object-position: 1% 70%; /* ancora più preciso */
-  border-radius: 30px;
+     object-position: 1% 70%; /* personalizza la parte visibile */
+  border-radius: 30px; /* uniforma agli altri box-link */
   transition: transform 0.3s ease;
 }
-.project-card .mamma-img {
+
+/* SOLO per la foto "gustoride" */
+/* SOLO per la foto "gustoride" */
+.gusto-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* l’immagine riempie mantenendo proporzioni */
+  -o-object-position: 50% 100%;
+     object-position: 50% 100%; /* default desktop */
+  border-radius: 30px; /* per uniformità */
+  transition: transform 0.3s ease;
+}
+
+/* Desktop - opzionale se vuoi lo stesso di default */
+@media (min-width: 992px) {
+  .gusto-img {
+    -o-object-position: 50% 100%;
+       object-position: 50% 100%;
+  }
+}
+/* Tablet */
+@media (max-width: 991px) and (min-width: 577px) {
+  .gusto-img {
+    -o-object-position: 80% 80%;
+       object-position: 80% 80%;
+  }
+}
+/* Mobile */
+@media (max-width: 576px) {
+  .gusto-img {
+    -o-object-position: 50% 100%;
+       object-position: 50% 100%;
+  }
+}
+/* SOLO per la foto "Mamma" */
+.mamma-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -355,20 +420,18 @@ footer {
   border-radius: 30px;
   transition: transform 0.3s ease;
 }
-.project-card .gusto-img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%; /* ancora più preciso */
-  border-radius: 30px;
-  transition: transform 0.3s ease;
-}
-.project-card:hover {
-  border-color: #ffffff;
-}
 
+/* Responsive: altezza immagini più piccola su tablet e mobile */
+@media (max-width: 992px) {
+  .box-link {
+    height: 20vh;
+  }
+}
+@media (max-width: 576px) {
+  .box-link {
+    height: 30vh;
+  }
+}
 /* CAROSELLO */
 /* Contenitore del carosello */
 .carousel-inner {
