@@ -63,61 +63,7 @@ h3 {
   }
 }
 
-p,
-.p,
-.p li {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  font-size: 18px;
-  color: #ffffff;
-  margin: 0;
 
-  @media (max-width: 992px) {
-    font-size: 16px;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 16px;
-  }
-}
-
-.date {
-  font-weight: 100;
-  font-size: 18px;
-  color: #ffffff;
-
-  @media (max-width: 992px) {
-    font-size: 16px;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 14px;
-  }
-}
-
-.titolino {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #ffffff;
-  letter-spacing: 1px;
-  margin-top: 0;
-  margin-bottom: 0.5rem; // avvicina titolo e lista
-
-
-  @media (max-width: 992px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 16px;
-  }
-}
-
-.container p {
-  line-height: 1.5; // più grande = più spazio tra le righe
-  margin-bottom: 1rem; // opzionale: spazio extra tra i paragrafi
-}
 
 //LINK BIANCHI
 .link-white {
@@ -513,40 +459,26 @@ footer {
 }
 
 
-// CURRICULUM (skills, contact, etc.)
+// CURRICULUM 
 .cv-box {
   border: 2px solid #ffffff;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   margin-bottom: 1rem;
 
-  // Su mobile, limita larghezza e centra
-  @media (max-width: 767.98px) { // xs + sm
+  @media (max-width: 767.98px) {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
-}
 
-@media (min-width: 992px) {
-  .cv-box {
+  @media (min-width: 992px) {
     margin-left: 0.35rem;
     margin-right: 0.35rem;
   }
-}
-
-
-// Box esperienze lavorative
-.experience-box {
-  border: 2px solid #ffffff;
-  border-radius: 20px;
-  padding: 1rem;
-  margin-bottom: 1rem; // o un valore preciso, tipo 2px
-
-
   .titolino {
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 24px;
     color: #ffffff;
     margin-bottom: 0.5rem;
@@ -561,29 +493,119 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .p {
+.description {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 0.5rem; /* distanza dal list */
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .description {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .description {
+    font-size: 18px;
+  }
+}
+
+/* Liste */
+.list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  margin-bottom: 1.0rem;
+}
+
+.list li {
+  margin-bottom: 6px;
+  font-weight: 200;
+  font-size: 18px;
+}
+}
+
+// Education specific list
+.education-list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  margin-bottom: 0; // o quello che vuoi tu
+
+  li {
+    margin-bottom: 0.5rem; // più o meno spazio tra i singoli item
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 1.4; // puoi cambiare lo spazio tra righe
+  }
+
+  .date {
+    display: block;
+    font-weight: 100;
+    font-size: 16px; // puoi anche ridurlo qui se vuoi
+    margin-bottom: 0.25rem; // distanza personalizzata dalla riga successiva
+  }
+}
+
+
+// ESPERIENZE LAVORATIVE
+.experience-box {
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  padding: 1rem 1rem 0rem 1rem; 
+  margin-bottom: 1rem; // o un valore preciso, tipo 2px
+
+
+  .titolino {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .date {
+    display: block;
     font-family: 'Inter', sans-serif;
     font-weight: 200;
     font-size: 18px;
     color: #ffffff;
-
-    p, ul {
-      margin: 0; // riduce spazio extra
-      padding: 0;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      list-style-type: disc;
-      li {
-        margin-bottom: 6px;
-      }
-    }
-
-    ul.highlights-list {
-      margin-top: 1rem; // distanza tra Responsibilities e Highlights
-    }
+    margin-bottom: 1rem;
   }
+
+.description {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 0.5rem; /* distanza dal list */
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .description {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .description {
+    font-size: 16px;
+  }
+}
+
+/* Liste */
+.list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  margin-bottom: 1.5rem;
+}
+
+.list li {
+  margin-bottom: 6px;
+  font-weight: 200;
+  font-size: 18px;
+}
 }
 
 
